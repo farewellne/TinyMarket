@@ -1,7 +1,7 @@
 package errors
 
 import (
-	"github.com/cloudwego/biz-demo/open-payment-platform/kitex_gen/common"
+	"TinyMarket/kitex_gen/common"
 )
 
 type Err struct {
