@@ -12,7 +12,7 @@
 | RPC 框架     | kitex              |
 | 数据库       | MySQL, redis       |
 | 代码生成     | cwgo(hertz, kitex) |
-| 服务发现中心 | Consul             |
+| 服务发现中心 | Nacos              |
 | 数据库映射   | gorm               |
 | 限流中间件   | hertz-limiter      |
 | 部署工具     | docker-compose     |
