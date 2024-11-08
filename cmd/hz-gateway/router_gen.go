@@ -3,7 +3,7 @@
 package main
 
 import (
-	router "TinyMarket/biz/router"
+	router "TinyMarket/cmd/hz-gateway/biz/router"
 	"github.com/cloudwego/hertz/pkg/app/server"
 )
 

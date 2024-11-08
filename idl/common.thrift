@@ -1,51 +1,51 @@
 namespace go common
 
-// 错误类的定义
+// Definition of error types
 enum Err {
-    // 通用错误
-    UnknownError            = 10000, // 未知错误
-    BadRequest              = 10001, // 无效的请求参数
-    Unauthorized            = 10002, // 未授权访问
-    Forbidden               = 10003, // 无权限访问
-    NotFound                = 10004, // 未找到资源
-    InternalServerError     = 10005, // 内部服务器错误
-    ServiceUnavailable      = 10006, // 服务不可用
-	ResponseUnableParse     = 10007, // 无法解析响应
+    // General errors
+    UnknownError            = 10000, // Unknown error
+    BadRequest              = 10001, // Invalid request parameters
+    Unauthorized            = 10002, // Unauthorized access
+    ServerNotFound          = 10003, // Server not found 
+    ServerMethodNotFound    = 10004, // Server method not found 
+    RequestServerFail       = 10005, // Request to server failed
+    ServerHandleFail        = 10006, // Server handling request failed 
+    ResponseUnableParse     = 10007, // Unable to parse server response
 	
-    // 网关错误
-    GatewayBadRequest       = 20001, // 网关收到无效请求
-    GatewayTimeout          = 20002, // 网关请求超时
-    GatewayServiceUnavailable = 20003, // 网关服务不可用
+    // Gateway errors
+    GatewayBadRequest       = 20001, // Gateway received invalid request
+    GatewayTimeout          = 20002, // Gateway request timeout
+    GatewayServiceUnavailable = 20003, // Gateway service unavailable
 
-    // 用户服务错误
-    UserNotFound            = 30001, // 用户未找到
-    InvalidUserCredentials  = 30002, // 无效的用户凭据
-    UserAlreadyExists       = 30003, // 用户已存在
-    UserForbidden           = 30004, // 用户无权限
+    // User service errors
+    UserNotFound            = 30001, // User not found
+    InvalidUserCredentials  = 30002, // Invalid user credentials
+    UserAlreadyExists       = 30003, // User already exists
+    UserForbidden           = 30004, // User forbidden
 
-    // 产品服务错误
-    ProductNotFound         = 40001, // 产品未找到
-    ProductOutOfStock       = 40002, // 产品库存不足
-    ProductInvalidRequest   = 40003, // 产品请求无效
+    // Product service errors
+    ProductNotFound         = 40001, // Product not found
+    ProductOutOfStock       = 40002, // Product out of stock
+    ProductInvalidRequest   = 40003, // Invalid product request
 
-    // 购物车服务错误
-    CartItemNotFound        = 50001, // 购物车项未找到
-    CartInvalidOperation    = 50002, // 购物车操作无效
-    CartUpdateFailed        = 50003, // 更新购物车失败
+    // Cart service errors
+    CartItemNotFound        = 50001, // Cart item not found
+    CartInvalidOperation    = 50002, // Invalid cart operation
+    CartUpdateFailed        = 50003, // Failed to update cart
 
-    // 订单服务错误
-    OrderNotFound           = 60001, // 订单未找到
-    OrderInvalidStatus      = 60002, // 订单状态无效
-    OrderCreationFailed     = 60003, // 创建订单失败
-    OrderCancellationFailed = 60004, // 取消订单失败
+    // Order service errors
+    OrderNotFound           = 60001, // Order not found
+    OrderInvalidStatus      = 60002, // Invalid order status
+    OrderCreationFailed     = 60003, // Failed to create order
+    OrderCancellationFailed = 60004, // Failed to cancel order
 
-    // 支付服务错误
-    PaymentFailed           = 70001, // 支付失败
-    PaymentNotFound         = 70002, // 支付记录未找到
-    PaymentAuthorizationFailed = 70003, // 支付授权失败
+    // Payment service errors
+    PaymentFailed           = 70001, // Payment failed
+    PaymentNotFound         = 70002, // Payment record not found
+    PaymentAuthorizationFailed = 70003, // Payment authorization failed
 
-    // 库存服务错误
-    InventoryNotAvailable   = 80001, // 库存不足
-    InventoryUpdateFailed   = 80002, // 更新库存失败
-    InventoryNotFound       = 80003  // 库存未找到
+    // Inventory service errors
+    InventoryNotAvailable   = 80001, // Inventory not available
+    InventoryUpdateFailed   = 80002, // Failed to update inventory
+    InventoryNotFound       = 80003  // Inventory not found
 }

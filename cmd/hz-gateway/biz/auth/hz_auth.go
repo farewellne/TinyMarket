@@ -1,6 +1,10 @@
-package middleware
+package hz_auth
 
 import (
+	"TinyMarket/cmd/hz-gateway/biz/errors"
+	"TinyMarket/cmd/hz-gateway/biz/types"
+	"TinyMarket/kitex_gen/common"
+	sign "TinyMarket/pkg/hz-gateway"
 	"context"
 	"encoding/json"
 	"net/http"
@@ -33,7 +37,7 @@ func GatewayAuth() []app.HandlerFunc {
 		// TODO get key in the right way
 		// actual business, the key should be different depending on merchant
 		key := "123"
-		p, err := auth.NewSignProvider(authParam.SignType, key)
+		p, err := sign.NewSignProvider(authParam.SignType, key)
 		if err != nil {
 			hlog.Error(err)
 			c.JSON(http.StatusOK, errors.New(common.Err_Unauthorized))
@@ -53,7 +57,7 @@ func GatewayAuth() []app.HandlerFunc {
 		// build signature
 		data := make(utils.H)
 		if err = json.Unmarshal(c.Response.Body(), &data); err != nil {
-			dataJson, _ := json.Marshal(errors.New(common.Err_RequestServerFail))
+			dataJson, _ := json.Marshal(errors.New(common.Err_ServerHandleFail))
 			c.Response.SetBody(dataJson)
 			return
 		}
