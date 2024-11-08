@@ -3,9 +3,8 @@
 package main
 
 import (
-	handler "TinyMarket/biz/handler"
-	"TinyMarket/biz/middleware"
-	"TinyMarket/biz/errors"
+	handler "TinyMarket/cmd/hz-gateway/biz/handler"
+	"TinyMarket/cmd/hz-gateway/biz/middleware"
 	"context"
 	"net/http"
 	"os"

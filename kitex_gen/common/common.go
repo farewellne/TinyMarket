@@ -14,10 +14,10 @@ const (
 	Err_UnknownError               Err = 10000
 	Err_BadRequest                 Err = 10001
 	Err_Unauthorized               Err = 10002
-	Err_Forbidden                  Err = 10003
-	Err_NotFound                   Err = 10004
-	Err_InternalServerError        Err = 10005
-	Err_ServiceUnavailable         Err = 10006
+	Err_ServerNotFound             Err = 10003
+	Err_ServerMethodNotFound       Err = 10004
+	Err_RequestServerFail          Err = 10005
+	Err_ServerHandleFail           Err = 10006
 	Err_ResponseUnableParse        Err = 10007
 	Err_GatewayBadRequest          Err = 20001
 	Err_GatewayTimeout             Err = 20002
@@ -52,14 +52,14 @@ func (p Err) String() string {
 		return "BadRequest"
 	case Err_Unauthorized:
 		return "Unauthorized"
-	case Err_Forbidden:
-		return "Forbidden"
-	case Err_NotFound:
-		return "NotFound"
-	case Err_InternalServerError:
-		return "InternalServerError"
-	case Err_ServiceUnavailable:
-		return "ServiceUnavailable"
+	case Err_ServerNotFound:
+		return "ServerNotFound"
+	case Err_ServerMethodNotFound:
+		return "ServerMethodNotFound"
+	case Err_RequestServerFail:
+		return "RequestServerFail"
+	case Err_ServerHandleFail:
+		return "ServerHandleFail"
 	case Err_ResponseUnableParse:
 		return "ResponseUnableParse"
 	case Err_GatewayBadRequest:
@@ -120,14 +120,14 @@ func ErrFromString(s string) (Err, error) {
 		return Err_BadRequest, nil
 	case "Unauthorized":
 		return Err_Unauthorized, nil
-	case "Forbidden":
-		return Err_Forbidden, nil
-	case "NotFound":
-		return Err_NotFound, nil
-	case "InternalServerError":
-		return Err_InternalServerError, nil
-	case "ServiceUnavailable":
-		return Err_ServiceUnavailable, nil
+	case "ServerNotFound":
+		return Err_ServerNotFound, nil
+	case "ServerMethodNotFound":
+		return Err_ServerMethodNotFound, nil
+	case "RequestServerFail":
+		return Err_RequestServerFail, nil
+	case "ServerHandleFail":
+		return Err_ServerHandleFail, nil
 	case "ResponseUnableParse":
 		return Err_ResponseUnableParse, nil
 	case "GatewayBadRequest":
